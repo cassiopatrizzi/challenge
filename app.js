@@ -3,14 +3,15 @@ let amigos = [];
 function adicionarAmigo() {
     let nomeDigitado = document.getElementById('amigo');
     let nome = nomeDigitado.value.trim();
-
+    
     if (nome === '') {
         alert('Por favor, insira um nome.');
         return;
     }
-
+    
     amigos.push(nome);
     nomeDigitado.value = '';
+    nomeDigitado.focus();
     exibirLista();
 }
 
@@ -42,6 +43,6 @@ function exibirSorteio(amigo) {
     resultadoLista.innerHTML = ''; 
 
     let amigoSorteado = document.createElement('li');
-    amigoSorteado.textContent = amigo;
+    amigoSorteado.textContent = `O amigo secreto sorteado foi: ${amigo}`;
     resultadoLista.appendChild(amigoSorteado);
 }
